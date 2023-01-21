@@ -1,0 +1,55 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg {
+  width: 500vw;
+  height: 500vh;
+  background: conic-gradient(from 0deg, #52e5e7, #130cb7, #52e5e7);
+  position: absolute;
+  left: -200vw;
+  top: -200vh;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.menu {
+  color: white;
+  display: flex;
+  gap: 48px;
+}
+
+.menu {
+  overflow: hidden;
+}
+
+.menu_item {
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.menu_item::after {
+  content: attr(data-content);
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  justify-content: center;
+}
+
+.menu_item {
+  transition: 0.5s;
+}
+
+.menu_item:hover {
+  translate: 0px -100%;
+}
